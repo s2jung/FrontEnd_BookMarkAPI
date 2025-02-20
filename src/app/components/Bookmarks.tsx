@@ -6,14 +6,15 @@ import Pagination from '@/app/components/Pagination';
 
 type Props = {
     // bookmarks: BookmarkType[]
-    bookmarks: BookmarksResponse
+    bookmarks: BookmarksResponse,
+    query?: string
 }
 
-const Bookmarks: React.FC<Props> = ({bookmarks}) => {
+const Bookmarks: React.FC<Props> = ({bookmarks, query}) => {
     return (
         <div>
             {/* <h1>Welcome to Bookmarker</h1> */}
-            <Pagination bookmarks={bookmarks} />
+            <Pagination bookmarks={bookmarks} query={query} />
             {/* {
             bookmarks.map(bookmark => {
                 return (

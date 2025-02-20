@@ -3,9 +3,13 @@ import axios, { AxiosResponse } from "axios"
 
 const API_BASE_URL = 'http://localhost:8080'
 
-export async function getAllBookmarks(page: number): Promise<BookmarksResponse> {
+export async function getAllBookmarks(page: number, query: string): Promise<BookmarksResponse> {
 
-    const API_URL = `${API_BASE_URL}/api/bookmarks?page=${page}`
+    // const API_URL = `${API_BASE_URL}/api/bookmarks?page=${page}`
+    let API_URL = `${API_BASE_URL}/api/bookmarks?page=${page}`
+    if(query) {
+        API_URL += `&query=${query}`
+    }
     console.log(`url = ${API_URL}`)
 
     // const res = await axios.get<BookmarksResponse>(`${API_BASE_URL}/api/bookmarks`)
