@@ -24,7 +24,7 @@ const NavBar = () => (
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               {/* <a className="nav-link">Add Bookmark</a> */}
-              <Link href="/add" className="nav-link">
+              <Link href="/bookmarks/add" className="nav-link">
                 Add Bookmark
               </Link>
             </li>
