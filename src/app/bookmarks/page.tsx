@@ -4,11 +4,11 @@ import Bookmarks from "@/app/components/Bookmarks";
 import SearchForm from "@/app/components/SearchForm";
 
 type Props = {
-  searchParams: { page: string, query: string }
+  searchParams: Promise<{ page: string, query?: string }>
 }
 
 export default async function BookmarkPage(props: Props)  {
-  const { page = 1, query = "" } = props.searchParams
+  const { page = 1, query = "" } = await props.searchParams
   // const bookmarksData: Promise<BookmarksResponse> = getAllBookmarks()
   // const bookmarksData: Promise<BookmarksResponse> = getAllBookmarks(parseInt(String(page)))
   const bookmarksData: Promise<BookmarksResponse> = getAllBookmarks(parseInt(String(page)), query)
